@@ -18,9 +18,4 @@ public class Cell {
 		return mark;
 		
 	}
-	
-	
-	
-	
-
 }

@@ -25,17 +25,5 @@ public class Line {
 			}
 		}
 			return l;
-				
-		
 	}	
-
-
-
 }
-
-
-
-		
-
-
-	

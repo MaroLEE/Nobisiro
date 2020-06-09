@@ -12,11 +12,26 @@ public class Board {
 			for (int y = 0; y < 3; y++) {
 				Cell cell = new Cell(x,y);
 				ll[x][y] = cell;
-				
-				
 			}
 		}
-		int count = 0;
+	}	
+	
+		public boolean checkArea(int x,int y) {
+			boolean k = false;
+			if (0 < x && x <4) {
+				if (0 < y && y <4) {
+					k=true;
+				}
+			}
+			return k;
+		}
+		
+		public boolean setCoordinates(int x,int y) {
+			return checkArea(x,y);
+		}
+		
+		
+		int count = 0;{
 		for(int i = 0; i < 3;i++) {
 			for(int j = 0; j < 3; j++) {
 				cells[count] = ll[i][j];
@@ -26,6 +41,7 @@ public class Board {
 		}
 		createline();
 	}
+		
 		public void createline() {
 		//横のLineを生成する(lines[0~2])
 				lines[0] = new Line(cells[0], cells[1], cells[2]);
@@ -42,6 +58,7 @@ public class Board {
 				lines[6] = new Line(cells[0], cells[4], cells[8]);
 				lines[7] = new Line(cells[2], cells[4], cells[6]);
 			}
+		
 		public boolean checkWin() {
 			boolean l = false;
 			for(int i = 0; i < lines.length; i++) {
@@ -56,9 +73,5 @@ public class Board {
 		return l;
 		
 		}
-		}
-	     
-			
-	
-	
-	
+}
+		
