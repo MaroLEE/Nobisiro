@@ -14,29 +14,32 @@ public class Board {
 				ll[x][y] = cell;
 			}
 		}
+		
+		int count = 0;{
+			for(int i = 0; i < 3;i++) {
+				for(int j = 0; j < 3; j++) {
+					cells[count] = ll[i][j];
+					count++;
+					
+				}
+			}
+			createline();
+		}
 	}	
 	
-	public boolean checkArea(int x,int y) {
-		boolean k = false;
-		if (0 < x && x <4) {
-			if (0 < y && y <4) {
-				k=true;
+		public boolean checkArea(int x,int y) {
+			boolean k = false;
+			if (0 < x && x <4) {
+				if (0 < y && y <4) {
+					k=true;
+				}
 			}
+			return k;
 		}
-		return k;
-	}
-	public boolean setCoordinates(int x,int y) {
-		return checkArea(x,y);
-	}
-	int count = 0;{
-	for(int i = 0; i < 3;i++) {
-		for(int j = 0; j < 3; j++) {
-			cells[count] = ll[i][j];
-			count++;
+		
+		public boolean setCoordinates(int x,int y) {
+			return checkArea(x,y);
 		}
-	}
-	createline();
-	}
 		
 		public void createline() {
 		//横のLineを生成する(lines[0~2])
@@ -67,8 +70,7 @@ public class Board {
 				
 			}
 		return l;
-	}
+		
+		}
 }
-
-
-
+		
