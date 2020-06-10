@@ -16,30 +16,26 @@ public class Board {
 		}
 	}	
 	
-		public boolean checkArea(int x,int y) {
-			boolean k = false;
-			if (0 < x && x <4) {
-				if (0 < y && y <4) {
-					k=true;
-				}
-			}
-			return k;
-		}
-		
-		public boolean setCoordinates(int x,int y) {
-			return checkArea(x,y);
-		}
-		
-		
-		int count = 0;{
-		for(int i = 0; i < 3;i++) {
-			for(int j = 0; j < 3; j++) {
-				cells[count] = ll[i][j];
-				count++;
-				
+	public boolean checkArea(int x,int y) {
+		boolean k = false;
+		if (0 < x && x <4) {
+			if (0 < y && y <4) {
+				k=true;
 			}
 		}
-		createline();
+		return k;
+	}
+	public boolean setCoordinates(int x,int y) {
+		return checkArea(x,y);
+	}
+	int count = 0;{
+	for(int i = 0; i < 3;i++) {
+		for(int j = 0; j < 3; j++) {
+			cells[count] = ll[i][j];
+			count++;
+		}
+	}
+	createline();
 	}
 		
 		public void createline() {
@@ -71,7 +67,8 @@ public class Board {
 				
 			}
 		return l;
-		
-		}
+	}
 }
-		
+
+
+

@@ -7,14 +7,27 @@ public class Main {
 	public static void main(String[] args) {
 		Board board = new Board();
 		Scanner s = new Scanner (System.in);
-		int x = 0;
-		int y = 0;
+		int x = 0, y = 0;
+		boolean winResult = false;
 		
 		do {
-		System.out.println("座標を入力してください");
-		x = s.nextInt();
-		y = s.nextInt();
-		board.setCoordinates(x, y);
-		} while (board.checkArea(x, y));
+			boolean result = false;
+			
+			do {
+			System.out.println("座標を入力してください。");
+			String input = s.nextLine();
+			String[] number = input.split(" ");
+			
+			x = Integer.parseInt(number[0]);
+			y = Integer.parseInt(number[1]);
+			result = board.setCoordinates(x, y);
+			}while (result == false);
+			
+			winResult = board.checkWin();
+		}while (winResult == false);
+		show3mark();
+	}
+	private static void show3mark() {
+		
 	}
 }
