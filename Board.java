@@ -38,8 +38,23 @@ public class Board {
 		}
 		
 		public boolean setCoordinates(int x,int y) {
-			return checkArea(x,y);
+			
+			boolean areaResult = false;
+			areaResult = checkArea(x,y);
+			if(areaResult == false) {
+				return false;
+			}
+			int markResult;
+			markResult = ll[x-1][y-1].getMark();
+			if(markResult == 0 || markResult == 1) {
+				return false;
+			}
+			ll[x-1][y-1].setMark(0);//第二反復では０と１の場合わけをする。
+			
+			return true;
+		
 		}
+		
 		
 		public void createline() {
 		//横のLineを生成する(lines[0~2])
