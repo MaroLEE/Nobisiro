@@ -26,7 +26,13 @@ public class Board {
 			createline();
 		}
 	}	
-	
+//	範囲外チェック
+	public boolean canPut(int x,int y) {
+		boolean put=false;
+		if(checkArea(x,y)==false || getMark()) {
+			return put;
+		}
+	}
 		public boolean checkArea(int x,int y) {
 			boolean k = false;
 			if (0 < x && x <4) {
@@ -36,10 +42,12 @@ public class Board {
 			}
 			return k;
 		}
-		
+	
+	
 		public boolean setCoordinates(int x,int y) {
 			return checkArea(x,y);
 		}
+		
 		
 		public void createline() {
 		//横のLineを生成する(lines[0~2])
@@ -57,7 +65,7 @@ public class Board {
 				lines[6] = new Line(cells[0], cells[4], cells[8]);
 				lines[7] = new Line(cells[2], cells[4], cells[6]);
 			}
-		
+//		勝利判定
 		public boolean checkWin() {
 			boolean l = false;
 			for(int i = 0; i < lines.length; i++) {
@@ -72,5 +80,7 @@ public class Board {
 		return l;
 		
 		}
+		
+		
 }
 		
