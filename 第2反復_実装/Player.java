@@ -9,7 +9,7 @@ public class Player {
 
 	public Player(String name) {//コンストラクタの引数を変更
 		this.name = name;
-		if(name == "first") {
+		if(name == "先攻") {
 			this.mark = 0;
 		}	this.mark = 1;
 	}
