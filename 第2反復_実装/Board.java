@@ -6,7 +6,10 @@ public class Board {
 	public Cell[] cells = new Cell[9];
 	public Line[] lines = new Line[8];
 	
-	
+	public Cell getCell(int x, int y) {
+        this.ll[x][y] = ll[x][y];
+        return ll[x][y];
+    }
 
 	
 	public Board() {
@@ -33,13 +36,22 @@ public class Board {
 		boolean put=false;
 		Cell cell = new Cell(x,y);
 		
-//		書き方わからん↓
-		if(checkArea(x,y)==true && cell.getMark()==2){
-			put=true;
+		if(checkArea(x,y) == true) {
+			if(ll[x][y].getMark() != 2) {
+	            return false;
+	        }else {
+	            return true;
+	        }
+		}else {
+			return false;
 		}
-			return put;
-			
-		}
+		
+
+		
+		
+		
+		
+	}
 
 
 	public boolean checkArea(int x,int y) {
