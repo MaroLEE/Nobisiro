@@ -4,39 +4,36 @@ import java.util.*;
 
 public class Game {
 
-	private Player firstPlayer;
-	private Player secondPlayer;
-	private Player nowPlayer = secondPlayer;
+	private Player first;
+	private Player second;
+	private Player nowPlayer;
+	private Board board;
 	private List<Turn> turns;
-	
+
 	public Game(){
-		Player firstPlayer = new Player("first");
-		Player secondPlayer = new Player("second");
+		this.first = new Player("先攻");
+		this.second = new Player("後攻");
+		this.nowPlayer = second;
 		turns = new ArrayList<Turn>();
 	}
 	
-	public void setPlayer(){
-		if(nowPlayer == firstPlayer){
-		this.nowPlayer = secondPlayer;
-		}
-		this.nowPlayer = firstPlayer;
-	}
-	
 	public void gameStart(){
-		for(Turn turn : turns) {//ターンごとにループする処理を設定したい
 		Board board = new Board();
-		board.showBoard();//Boardクラスで盤の表示をする仕組みを作っておく
-		
+		board.showBoard;
 		setPlayer();
-		
-		Turn turns = new Turn(nowPlayer);
-		turns.turnStart();
-		}
-	}
-		board.showBoard();
-		
+		Turn turn = new Turn(nowPlayer);
+		turn.turnStart();
+		this.turns.add(turn);
+		board.showBoard;
 		System.out.println("＜ターン履歴＞");
 		for(Turn turn : turns) {
-				turn.showHistory();
+			turn.showHistory();
 		}
+	}
+	public void setPlayer(){
+		if(nowPlayer == first){
+		this.nowPlayer = second;
+		}
+		this.nowPlayer = first;
+	}
 }
