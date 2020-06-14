@@ -7,6 +7,8 @@ public class Board {
 	public Line[] lines = new Line[8];
 	
 	
+	Cell cell=new Cell();
+	
 	public Board() {
 		for (int x = 0; x < 3; x++) {
 			for (int y = 0; y < 3; y++) {
@@ -29,23 +31,26 @@ public class Board {
 //	範囲外チェック
 	public boolean canPut(int x,int y) {
 		boolean put=false;
-		if(checkArea(x,y)==false || getMark()) {
+		
+//		書き方わからん↓
+		if(checkArea(x,y)==false || cell.getMark()==0 || cell.getMark()==1) {
 			return put;
+			
+		}else if(checkArea(x,y)==true && cell.getMark()==2){
+			put=true;
+			return put;
+			
 		}
 	}
+
 		public boolean checkArea(int x,int y) {
-			boolean k = false;
+			boolean areaResult = false;
 			if (0 < x && x <4) {
 				if (0 < y && y <4) {
-					k=true;
+					areaResult=true;
 				}
 			}
-			return k;
-		}
-	
-	
-		public boolean setCoordinates(int x,int y) {
-			return checkArea(x,y);
+			return areaResult;
 		}
 		
 		
@@ -67,20 +72,52 @@ public class Board {
 			}
 //		勝利判定
 		public boolean checkWin() {
-			boolean l = false;
+			boolean winResult = false;
 			for(int i = 0; i < lines.length; i++) {
 				lines[i].checkLine();
 				if(lines[i].checkLine() == true) {
-					l = true;
+					winResult = true;
 					break;
 					
 				}
 				
 			}
-		return l;
+		return winResult;
 		
 		}
 		
-		
+//		引き分け判定
+		public boolean checkFull() {
+			boolean fullResult=false;
+			for(int i = 0; i<cells.length ; i++) {
+				cells[i].getMark();
+				}if(cells[i].getMark()==0 && cells[i].getMark()==1) {
+				fullResult=true;
+				
+			}
+			return fullResult;
+		}
+//		showBoard
+		public void showBoard() {
+			for(int i = 0; i < 3; i++) {
+				System.out.println("-------");
+				for(int j = 0; j < 7; j++) {
+					if(j % 2 == 0) {
+						System.out.print("|");
+					}else {
+						Cell cell = cells[i][j/2]; 
+						if(cell.getMark() == 0) {
+							System.out.print("○");
+						}else if(cell.getMark() == 1) {
+							System.out.print("×");
+						}else {
+							System.out.print(" ");
+						}
+					}
+				}
+				System.out.println("");
+			}
+			System.out.println("-------");
+		}
 }
 		
