@@ -4,21 +4,23 @@ public class Turn {
 	private int mark;
 	private int x;
 	private int y;
+	private Player player;
+	private Board board;
+	private Cell cell;
 
 	public Turn (Player nowPlayer) {
-		Player player = new Player("first");
+		
+		this.player = nowPlayer;
 		}
 	
-	public void turnStart() {
-		Cell cell = new Cell(x, y);
-		cell.setCoordinates();
-		
-		Board board = new Board();
+	public void turnStart(Board board) {
+		Player player = new Player("first");
+		player.setCoordinates();
 		
 		board.checkWin();
 			if(board.checkWin() == true) {
 				board.showBoard();
-				System.out.println("勝者:" + nowPlayer);
+				System.out.println("勝者:" + player);
 			}
 		board.checkFull();
 	}
@@ -33,4 +35,5 @@ public class Turn {
 			System.out.println("×");
 		}
 	}
+
 }
