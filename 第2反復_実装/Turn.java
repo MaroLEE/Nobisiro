@@ -1,26 +1,26 @@
 package mini;
 
 public class Turn {
-	private Player player;
-	private Cell cell;
 	private int mark;
-	
 	private int x;
 	private int y;
 
 	public Turn (Player nowPlayer) {
-		
-	}
+		Player player = new Player("first");
+		}
 	
 	public void turnStart() {
+		Cell cell = new Cell(x, y);
 		cell.setCoordinates();
-	
-		Board.checkWin(){
-		System.out.println()
-		}
-		Board.chekcFull(){
-			
-		}
+		
+		Board board = new Board();
+		
+		board.checkWin();
+			if(board.checkWin() == true) {
+				board.showBoard();
+				System.out.println("勝者:" + nowPlayer);
+			}
+		board.checkFull();
 	}
 	
 	public void showHistory() {
