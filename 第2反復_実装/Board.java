@@ -104,7 +104,7 @@ public class Board {
 				if(j % 2 == 0) {
 					System.out.print("|");
 				}else {
-					Cell cell = cells[i][j/2]; 
+					Cell cell = ll[i][j/2]; 
 					if(cell.getMark() == 0) {
 						System.out.print("○");
 					}else if(cell.getMark() == 1) {
