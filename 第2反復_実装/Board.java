@@ -99,11 +99,14 @@ public class Board {
 	
 //		引き分け判定
 	public boolean checkFull() {
-		boolean fullResult=false;
+		boolean fullResult = true;
 		for(int i = 0; i<cells.length ; i++) {
 			cells[i].getMark();
-			if(cells[i].getMark()==0 && cells[i].getMark()==1) {
-			fullResult=true;
+			if(cells[i].getMark() == 2) {
+			fullResult=false;
+			}else {
+				fullResult = true;
+				
 			}
 		}
 		return fullResult;
