@@ -11,10 +11,11 @@ public class Player {
 		this.name = name;
 		if(name == "first") {
 			this.mark = 0;
-		}	this.mark = 1;
+		}else {
+			this.mark = 1;
+		}
 	}
-	public Cell setCoordinates() {
-		Board board = new Board();
+	public Cell setCoordinates(Board board) {
 		Scanner s = new Scanner (System.in);
 		int x = 0, y = 0;
 		boolean putResult = false;
@@ -26,15 +27,12 @@ public class Player {
 			x = Integer.parseInt(number[0]);
 			y = Integer.parseInt(number[1]);
 			putResult = board.canPut(x, y);
-			}while (putResult == false);
+		}while (putResult == false);
 		s.close();
 		
-		if(putResult == true) {
-			Cell cell = board.getCell(x,y); 
-			cell.setMark(mark);
-			return cell;
-		}
-		return null;
+		Cell cell = board.getCell(x,y); 
+		cell.setMark(mark);
+		return cell;
 	}
 	public String getPlayer() {
 		return this.name;

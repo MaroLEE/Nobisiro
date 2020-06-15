@@ -28,8 +28,8 @@ public class Turn_test {
 		
 		
 		
-		Cell cell1 = new Cell(2,2);
-		cell1.setMark(0);
+//		Cell cell1 = new Cell(2,2);
+//		cell1.setMark(0);
 //		Cell cell2 = new Cell(2,1);
 //		cell2.setMark(1); 
 //		Cell cell3 = new Cell(1,1);

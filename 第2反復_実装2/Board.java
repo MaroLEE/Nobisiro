@@ -33,9 +33,6 @@ public class Board {
 	}	
 //	範囲外チェック
 	public boolean canPut(int x,int y) {
-		boolean put=false;
-		Cell cell = new Cell(x,y);
-		
 		if(checkArea(x,y) == true) {
 			if(ll[x-1][y-1].getMark() != 2) {
 				System.out.println("既に置かれています。");
@@ -47,12 +44,6 @@ public class Board {
 			System.out.println("1から3の数字を入力して下さい。");
 			return false;
 		}
-		
-
-		
-		
-		
-		
 	}
 
 
@@ -95,7 +86,7 @@ public class Board {
 			}
 			
 		}
-	return winResult;
+		return winResult;
 	
 	}
 	

@@ -13,9 +13,8 @@ public class Turn {
 		this.player = nowPlayer;
 		}
 	
-	public void turnStart(Board board) {
-		Player player = new Player("first");
-		player.setCoordinates();
+	public void turnStart(Board board) {		
+		this.cell = player.setCoordinates(board);
 		
 		board.checkWin();
 			if(board.checkWin() == true) {
