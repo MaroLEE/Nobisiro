@@ -9,16 +9,15 @@ import org.junit.Test;
 
 public class Turn_test {
 	
-	@Test
-	public void test1_1() {
+	public static void main(String[] args) {
 		
-		Player firstplayer = new Player("first");
-		Player secondplayer = new Player("second");
+		Player firstplayer = new Player("先攻");
+		Player secondplayer = new Player("後攻");
 		Board board = new Board();
 		Turn turn1 = new Turn(firstplayer);
 		turn1.turnStart(board);
-//		Turn turn2 = new Turn(secondplayer);
-//		turn2.turnStart(board);
+		Turn turn2 = new Turn(secondplayer);
+		turn2.turnStart(board);
 //		Turn turn3 = new Turn(firstplayer);
 //		turn3.turnStart(board);
 //		Turn turn4 = new Turn(secondplayer);
@@ -39,6 +38,7 @@ public class Turn_test {
 //		Cell cell5 = new Cell(3,3);
 //		cell5.setMark(0);
 	turn1.showHistory();
+	turn2.showHistory();
 		
 	}		
 }		

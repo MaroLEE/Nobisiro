@@ -13,13 +13,15 @@ public class Line {
 		int mark2 = cells[1].getMark();
 		int mark3 = cells[2].getMark();
 		boolean result =true;
-		
-		if(mark1 == mark2 && mark1 ==mark3) {
-			result = true;
-		}else {
+		if(mark1 == 2) {
 			result = false;
-		
+		}else {
+			if(mark1 == mark2 && mark1 ==mark3) {
+				result = true;
+			}else {
+				result = false;
+			}
 		}
-			return result;
+		return result;
 	}	
 }

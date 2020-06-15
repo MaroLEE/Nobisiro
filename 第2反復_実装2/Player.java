@@ -9,7 +9,7 @@ public class Player {
 
 	public Player(String name) {//コンストラクタの引数を変更
 		this.name = name;
-		if(name == "first") {
+		if(name == "先攻") {
 			this.mark = 0;
 		}else {
 			this.mark = 1;
@@ -28,7 +28,7 @@ public class Player {
 			y = Integer.parseInt(number[1]);
 			putResult = board.canPut(x, y);
 		}while (putResult == false);
-		s.close();
+//		s.close();
 		
 		Cell cell = board.getCell(x,y); 
 		cell.setMark(mark);

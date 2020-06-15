@@ -9,19 +9,11 @@ public class Turn {
 	private Cell cell;
 
 	public Turn (Player nowPlayer) {
-		
 		this.player = nowPlayer;
 		}
 	
 	public void turnStart(Board board) {		
 		this.cell = player.setCoordinates(board);
-		
-		board.checkWin();
-			if(board.checkWin() == true) {
-				board.showBoard();
-				System.out.println("勝者:" + player);
-			}
-		board.checkFull();
 	}
 	
 	public void showHistory() {

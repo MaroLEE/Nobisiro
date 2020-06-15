@@ -78,16 +78,12 @@ public class Board {
 	public boolean checkWin() {
 		boolean winResult = false;
 		for(int i = 0; i < lines.length; i++) {
-			lines[i].checkLine();
 			if(lines[i].checkLine() == true) {
 				winResult = true;
 				break;
-				
 			}
-			
 		}
 		return winResult;
-	
 	}
 	
 //		引き分け判定
